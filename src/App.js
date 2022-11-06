@@ -1,5 +1,7 @@
+import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Card from "./components/Card";
+import UserCard from "./components/UserCard";
 
 const data = [
   {
@@ -76,6 +78,27 @@ const data = [
   },
 ];
 
+const userData = [
+  {
+    name: "sidhant Kaushal",
+    age: 20,
+    designation: "Full Stack Dev",
+    url: "https://nregsmp.org/eService/images/User.png",
+  },
+  {
+    name: "rohan awasthi",
+    age: 20,
+    designation: "Full Stack Dev",
+    url: "https://nregsmp.org/eService/images/User.png",
+  },
+  {
+    name: "Chirag shetty",
+    age: 20,
+    designation: "Full Stack Dev",
+    url: "https://nregsmp.org/eService/images/User.png",
+  },
+];
+
 function App() {
   const title = "we rockk";
   return (
@@ -90,9 +113,26 @@ function App() {
             </div>
           );
         })}
+        <div className="row">
+          {userData.map((val) => {
+            return (
+              <div className="col-6 col-sm-6 col p-3">
+                <UserCard {...val} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
+  // return(
+  //   <BrowserRouter>
+  //   <Routes>
+  //     <Route path="/"  element={<Home/>} />
+  //     </Route>
+  //   </Routes>
+  //   </BrowserRouter>
+  // );
 }
 
 export default App;
